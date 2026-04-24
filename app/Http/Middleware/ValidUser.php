@@ -14,11 +14,12 @@ class ValidUser
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next): Response
+    public function handle(Request $request, Closure $next, string $role): Response
     {
 
        echo "<h1> this is a User middleware</h1>";
-       if(Auth::check()){
+      echo "$role</h1>";
+       if(Auth::check() && Auth::user()->role == $role){
          return $next($request);
        }else{
         return redirect()->route('loginPage');

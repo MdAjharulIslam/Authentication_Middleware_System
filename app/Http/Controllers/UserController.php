@@ -48,4 +48,26 @@ class UserController extends Controller
     }
 
 
+    // learn about session
+
+
+    public function seeSession(){
+       $value =  session()->all();
+       echo "<pre>";
+       print_r($value);
+       echo "</pre>";
+    }
+
+    public function createSession(){
+         session(['name'=> 'ajharul']);
+
+         session()->regenerate();
+    }
+
+
+      public function deleteSession(){
+         session()->forget('name');
+
+         session()->invalidate();
+    }
 }

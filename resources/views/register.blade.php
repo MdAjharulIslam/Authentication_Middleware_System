@@ -41,7 +41,7 @@
                             <input type="number" name="age" class="form-control" placeholder="Enter Age" required>
                         </div>
                         <div class="mb-3">
-                            <label>Age</label>
+                            <label>Role</label>
                             <select name="role" id="">
                                 <option value="admin">Admin</option>
                             <option value="reader">Reader</option>
